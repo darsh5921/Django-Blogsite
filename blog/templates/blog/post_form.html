@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-grp">
+                <legend class="border-bottom mb-4">Create Post</legend>
+                {% bootstrap_form form %}
+                <input type="submit" class='btn btn-outline-info' name="" id="" value="Post ">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+{% endblock content %}

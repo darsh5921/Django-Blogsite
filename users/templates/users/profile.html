@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{user.userprofile.profilePic.url}}" class="card-img-top rounded-circle account-img" alt="profile pic">
+                <div class="card-body">
+                  <h5 class="card-title">{{user.username}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">{{user.roll_no}}</h6>
+                  <p class="card-text">About</p>
+                </div>
+            </div>
+            <div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-grp">
+                        <legend class="border-bottom mb-4">Profile Info</legend>
+                        {% bootstrap_form u_form %}
+                        {% bootstrap_form p_form %}   
+                        <input type="submit" class='btn btn-outline-info' name="" id="" value="Update">
+                    </fieldset>
+                </form>
+            </div>
+
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="card">
+  <div class="card-body">
+    <h3 class ="mb-2"><a class ="text-dark" href="{% url 'user-posts' username=object.author.username %}">{{object.author}}</a></h3>
+    <h5>{{object.title}}</h5>
+    <p>{{object.content}}</p>
+    <small>Created on : {{object.create_date|date:'F d Y'}}</small>
+    {% if object.post_date %}
+    <div class="date postdate">
+      <small>Posted on : {{object.post_date|date:'F d Y'}}</small>
+    </div>
+    {% else %}
+    <a class="btn btn-default" href="{% url 'post-publish' pk=object.id %}">Publish</a>
+    {% endif %}
+  </div>
+  {% if object.author == user %}
+  <div class="card-footer text-muted ">
+    <a class="m -3 " href="{% url 'post-update' username=object.author pk=object.id %}">
+        <i class="far fa-edit"></i>
+    </a>
+    <a class="m -3 " href="{% url 'post-delete' username=object.author pk=object.id %}">
+        <i class="fas fa-trash-alt text-danger"  arai-hidden='true'></i>
+    </a>
+  </div>
+  {% endif %}
+  
+  
+</div>
+    
+{% endblock content %}

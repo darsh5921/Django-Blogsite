@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-grp">
+                <legend class="border-bottom mb-4">Delete Post</legend>
+                <h2> Are you sure you want to delete post ? </h2>
+                <h2>"{{object.title}}"</h2>
+                <input type="submit" class='btn btn-lg btn-danger' name="" id="" value="Confirm Delete">
+                <a href="{% url 'post-detail' username=object.author pk=object.id %}"
+                class="btn btn-outline-secondary">Cancel</a>
+            </fieldset>
+        </form>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+  
+    <div class="container">
+
+        <div class="jumbotron">
+            <form method='POST'>
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Log In</legend>             
+                    {% bootstrap_form form %}
+                    <input type="submit" class='btn btn-outline-info' value='Login'>
+                </fieldset>
+            </form>
+            <div class="border-top mb-4">
+                <small class="text-muted"> 
+                    Don't have an account?
+                    <a href="{% url 'register' %}">Sign up for FREE</a> 
+                </small>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock content %}
