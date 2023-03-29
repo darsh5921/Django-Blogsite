@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-  <h1  class ="mb-3 "> Welcome {{user.username}} </h1>
+
+<h2  class ="mb-3 "> Welcome {{user.username}} </h2>
 {% else %}
   <h1 class ="mb-3 ">Home</h1>
 {% endif %}
@@ -44,5 +45,5 @@
     <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
   {% endif %}
 {% endif %}
-    
+
 {% endblock content %}
