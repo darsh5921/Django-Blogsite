@@ -4,11 +4,11 @@
 
 <h2  class ="mb-3 "> Welcome {{user.username}} </h2>
 {% else %}
-  <h1 class ="mb-3 ">Home</h1>
+  <h1 class ="mb-3 ml-4">Home</h1>
 {% endif %}
 
 {% for pst in posted  %}
-<div class="card">
+<div class="card" style="border-radius: 1.25rem;">
   <div class="card-body">
     <div class="row">
       <div class="col-2">
@@ -20,7 +20,7 @@
       <div class ='card-text'>
         <p>{{pst.content}}</p>
       </div>
-        <div class="card-footer text-muted">
+        <div class="card-footer text-muted" style="border-radius: 0.8rem;">
           <small>{{pst.create_date|date:'F d Y'}}</small>
         </div>
       </div>
@@ -30,7 +30,7 @@
 {% endfor %}
 {% if is_paginated %}
   {% if page_obj.has_previous %}
-    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+    <a class="btn btn-outline-info mb-4 ml-5" href="?page=1">First</a>
     <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-chevron-left"></i></a>
   {% endif %}
   {% for num in page_obj.paginator.page_range  %}

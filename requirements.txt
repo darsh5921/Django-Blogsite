@@ -1,0 +1,6 @@
+auto-py-to-exe==2.40.0
+django-bootstrap4==0.1.0
+config==0.5.1
+Django==4.2.6
+Pillow==10.0.1
+python-decouple==3.8

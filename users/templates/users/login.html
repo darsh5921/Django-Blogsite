@@ -2,22 +2,22 @@
 {% load bootstrap4 %}
 
 {% block content %}
-  
+
     <div class="container">
 
-        <div class="jumbotron">
+        <div class="jumbotron" style="margin-top: 2rem; background-color: #88eef900; border-style:solid;" >
             <form method='POST'>
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Log In</legend>             
+                    <legend class="border-bottom mb-4" style="border-bottom: 1px solid !important;">Log In</legend>
                     {% bootstrap_form form %}
                     <input type="submit" class='btn btn-outline-info' value='Login'>
                 </fieldset>
             </form>
-            <div class="border-top mb-4">
-                <small class="text-muted"> 
+            <div class="border-top mb-4" style="border-top: 1px solid !important;">
+                <small class="text-muted">
                     Don't have an account?
-                    <a href="{% url 'register' %}">Sign up for FREE</a> 
+                    <a href="{% url 'register' %}">Sign up for FREE</a>
                 </small>
             </div>
 

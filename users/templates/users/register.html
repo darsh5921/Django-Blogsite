@@ -3,18 +3,18 @@
 
 {% block content %}
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron" style="margin-top:2rem; background-color:#88eef900; border-style:solid;">
 
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-grp">
-                <legend class="border-bottom mb-4">Join Today</legend>
+                <legend class="border-bottom mb-4" style="border-bottom: 1px solid !important;">Join Today</legend>
                 {% bootstrap_form form %}
-                <input type="submit" class='btn btn-outline-info' name="" id="" value="Sign Up">
+                <input type="submit" class='btn btn-outline-info' name="" id="" value="Sign Up" style="margin-bottom: 0.5rem;">
             </fieldset>
         </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
+        <div class="border-top pt-3"style="border-top: 1px solid !important;">
+            <small class="text-mutedy">
                 Already Have An Account?
                 <a class="ml-2" href="{% url 'login' %}">Sign In</a>
             </small>
