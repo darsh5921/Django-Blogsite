@@ -8,6 +8,10 @@
 
  Then in terminal type python manage.py runserver and open the server link to access the website.
 
+ # Video Demo
+
+ https://www.youtube.com/watch?v=MMkRFgF51wY&list=PLKc7PFu7bC7fj0hSmO-oYLcBJtrxbCFQi&index=4
+
 # Screenshots:
 
 Home Page
